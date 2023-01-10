@@ -1,2 +1,5 @@
 ## fastbootd
 ro.fastbootd.available=true
+
+# Apex
+ro.apex.updatable=false
