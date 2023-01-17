@@ -41,4 +41,7 @@
 
     <!-- Charging info current divider, if needed -->
     <integer name="config_currentInfoDivider" translatable="false">1</integer>
+
+    <!-- Burn-in protection -->
+    <dimen name="burnin_protection_horizontal_shift">1dp</dimen>
 </resources>
