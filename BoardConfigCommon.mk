@@ -164,3 +164,9 @@ WIFI_FEATURE_HOSTAPD_11AX        := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
+
+# Kernel
+KERNEL_TOOLCHAIN        := $(shell pwd)/device/samsung/exynos9820-common/prebuilts/gcc/linux-x86/aarch64/aarch64-cruel-elf/bin
+KERNEL_TOOLCHAIN_PREFIX := aarch64-cruel-elf-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-cruel-elf-
+TARGET_KERNEL_CLANG_COMPILE := false
