@@ -336,3 +336,6 @@ PRODUCT_COPY_FILES += \
 # GApps
 TARGET_IS_GROUPER := true
 include vendor/gapps/arm64/arm64-vendor.mk
+
+# Boot Animation
+TARGET_BOOTANIMATION := $(shell pwd)/device/samsung/exynos9820-common/prebuilts/bootanimation/bootanimation.zip
