@@ -134,6 +134,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/init.recovery.exynos9820.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos9820.rc \
     $(COMMON_PATH)/configs/init/init.recovery.exynos9820.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos9825.rc \
     $(COMMON_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.samsung.rc \
+    $(COMMON_PATH)/KController/init/init.kcontroller.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.kcontroller.rc \
     $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
 ifeq ($(TARGET_HAVE_FOD),true)
@@ -144,6 +145,10 @@ endif
 # Kernel
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := true
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
+
+# KCtroller
+PRODUCT_PACKAGES += \
+    KController
 
 # Keylayout
 PRODUCT_COPY_FILES += \

@@ -9,3 +9,6 @@ allow init socket_device:sock_file { create setattr unlink };
 allow init kernel:system module_request;
 
 allow init sysfs_block_writable:file rw_file_perms;
+
+# Allow init to set attribute to sysfs_kcontroller domain
+allow init sysfs_kcontroller:file { setattr };

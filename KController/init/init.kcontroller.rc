@@ -1,0 +1,5 @@
+on boot
+    chown system system /sys/module/devfreq_boost/parameters/devfreq_boost
+    chmod 0660 /sys/module/devfreq_boost/parameters/devfreq_boost
+    chown system system /sys/devices/platform/battery/power_supply/battery/batt_full_capacity
+    chmod 0660 /sys/devices/platform/battery/power_supply/battery/batt_full_capacity

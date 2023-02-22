@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:title="@string/kcontroller_title">
+
+     <SwitchPreference
+          android:key="devfreq_boost"
+          android:defaultValue="false"
+          android:title="@string/devfreq_boost_title" />
+
+     <SwitchPreference
+          android:key="charging_limit"
+          android:defaultValue="false"
+          android:title="@string/charging_limit_title" />
+
+     <SeekBarPreference
+          android:key="charging_limit_threshold"
+          android:title="@string/charging_limit_threshold_title"
+          android:dependency="charging_limit"
+          android:defaultValue="85"
+          android:max="90" />
+
+</PreferenceScreen>

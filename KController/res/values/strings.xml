@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+     <string name="kcontroller_title">KController</string>
+     <string name="kcontroller_summary">Managing KernelSpace parameters</string>
+
+     <string name="devfreq_boost_title">Device frequency boost</string>
+     <string name="devfreq_boost_not_supported">Device frequency boost is not currently supported by the kernel</string>
+     <string name="devfreq_boost_summary">Apply a MIF boost for a short duration when screen is turned on or when an app is opened</string>
+
+     <string name="charging_limit_title">Charging limit</string>
+     <string name="charging_limit_threshold_title">Charging limit threshold</string>
+     <string name="charging_limit_not_supported">Charging limit is not currently supported by the kernel</string>
+     <string name="charging_limit_summary">Stop charging when device charged until a chosen threshold</string>
+
+</resources>

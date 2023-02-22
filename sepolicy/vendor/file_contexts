@@ -77,6 +77,14 @@
 # S Pen
 /sys/devices/virtual/sec/sec_epen(/.*)?                       u:object_r:sysfs_spen:s0
 
+# Battery
+/sys/devices/platform/battery/power_supply                                        u:object_r:sysfs:s0
+/sys/devices/platform/battery/power_supply/battery                                u:object_r:sysfs:s0
+/sys/devices/platform/battery/power_supply/battery/batt_full_capacity             u:object_r:sysfs_kcontroller:s0
+
+# CPU
+/sys/module/devfreq_boost/parameters/devfreq_boost                                u:object_r:sysfs_kcontroller:s0
+
 # Sensors
 /sys/devices/platform/10970000.spi/spi_master/spi17/spi17.0(/.*)                  u:object_r:sysfs_iio:s0
 /sys/devices/platform/10970000.spi/spi_master/spi17/spi17.0(/.*)/poll_delay       u:object_r:sysfs_sensors_writable:s0
