@@ -84,6 +84,14 @@
 
 # CPU
 /sys/module/devfreq_boost/parameters/devfreq_boost                                u:object_r:sysfs_kcontroller:s0
+/sys/devices/system/cpu                                                           u:object_r:sysfs:s0
+/sys/devices/system/cpu/cpufreq                                                   u:object_r:sysfs:s0
+/sys/devices/system/cpu/cpufreq/policy0                                           u:object_r:sysfs:s0
+/sys/devices/system/cpu/cpufreq/policy4                                           u:object_r:sysfs:s0
+/sys/devices/system/cpu/cpufreq/policy6                                           u:object_r:sysfs:s0
+/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq                          u:object_r:sysfs_kcontroller:s0
+/sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq                          u:object_r:sysfs_kcontroller:s0
+/sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq                          u:object_r:sysfs_kcontroller:s0
 
 # Sensors
 /sys/devices/platform/10970000.spi/spi_master/spi17/spi17.0(/.*)                  u:object_r:sysfs_iio:s0

@@ -25,6 +25,7 @@ public class KSettingsFragment extends PreferenceFragment {
 
     private SharedPreferences mSharedPrefs;
     private SwitchPreference mDevfreqBoostPreference;
+    private SwitchPreference mUnderclockPreference;
     private SwitchPreference mChargingLimitPreference;
     private SeekBarPreference mChargingLimitThresholdPreference;
 
@@ -35,6 +36,7 @@ public class KSettingsFragment extends PreferenceFragment {
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
 
         mDevfreqBoostPreference = (SwitchPreference) findPreference(Tags.DEVFREQ_BOOST_KEY);
+        mUnderclockPreference = (SwitchPreference) findPreference(Tags.CPU_UNDERCLOCK_KEY);
         mChargingLimitPreference = (SwitchPreference) findPreference(Tags.CHARGING_LIMIT_KEY);
         mChargingLimitThresholdPreference = (SeekBarPreference) findPreference(Tags.CHARGING_LIMIT_THRESHOLD_KEY);
 
@@ -47,6 +49,17 @@ public class KSettingsFragment extends PreferenceFragment {
         } else {
             mDevfreqBoostPreference.setEnabled(false);
             mDevfreqBoostPreference.setSummary(R.string.devfreq_boost_not_supported);
+        }
+
+        if (FileUtils.fileExists(Tags.CPU_0_FREQ_NODE) &&
+            FileUtils.fileExists(Tags.CPU_4_FREQ_NODE) &&
+            FileUtils.fileExists(Tags.CPU_6_FREQ_NODE))
+        {
+            mUnderclockPreference.setEnabled(true);
+            mUnderclockPreference.setSummary(R.string.cpu_underclock_summary);
+        } else {
+            mUnderclockPreference.setEnabled(false);
+            mUnderclockPreference.setSummary(R.string.cpu_underclock_not_supported);
         }
 
         if (FileUtils.fileExists(Tags.CHARGING_LIMIT_NODE)) {
@@ -62,6 +75,20 @@ public class KSettingsFragment extends PreferenceFragment {
                 FileUtils.writeLine(Tags.DEVFREQ_BOOST_NODE, "1");
             else
                 FileUtils.writeLine(Tags.DEVFREQ_BOOST_NODE, "0");
+            return true;
+        });
+
+        mUnderclockPreference.setOnPreferenceChangeListener((preference, newValue) -> {
+            if ((boolean)newValue) {
+                FileUtils.writeLine(Tags.CPU_0_FREQ_NODE, "1300000");
+                FileUtils.writeLine(Tags.CPU_4_FREQ_NODE, "1794000");
+                FileUtils.writeLine(Tags.CPU_6_FREQ_NODE, "2236000");
+            }
+            else {
+                FileUtils.writeLine(Tags.CPU_0_FREQ_NODE, "1950000");
+                FileUtils.writeLine(Tags.CPU_4_FREQ_NODE, "2314000");
+                FileUtils.writeLine(Tags.CPU_6_FREQ_NODE, "2730000");
+            }
             return true;
         });
 

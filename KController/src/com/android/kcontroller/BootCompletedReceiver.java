@@ -24,6 +24,18 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         boolean kDevfreqBoost = sharedPrefs.getBoolean(Tags.DEVFREQ_BOOST_KEY, false);
         FileUtils.writeLine(Tags.DEVFREQ_BOOST_NODE, kDevfreqBoost?"1":"0");
 
+        boolean kUnderclock = sharedPrefs.getBoolean(Tags.CPU_UNDERCLOCK_KEY, false);
+        if (!kUnderclock) {
+            FileUtils.writeLine(Tags.CPU_0_FREQ_NODE, "1950000");
+            FileUtils.writeLine(Tags.CPU_4_FREQ_NODE, "2314000");
+            FileUtils.writeLine(Tags.CPU_6_FREQ_NODE, "2730000");
+        }
+        else {
+            FileUtils.writeLine(Tags.CPU_0_FREQ_NODE, "1300000");
+            FileUtils.writeLine(Tags.CPU_4_FREQ_NODE, "1794000");
+            FileUtils.writeLine(Tags.CPU_6_FREQ_NODE, "2236000");
+        }
+
         boolean kChargingLimit = sharedPrefs.getBoolean(Tags.CHARGING_LIMIT_KEY, false);
         if (!kChargingLimit)
             FileUtils.writeLine(Tags.CHARGING_LIMIT_NODE, "0");

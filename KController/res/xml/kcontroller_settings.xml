@@ -10,6 +10,11 @@
           android:title="@string/devfreq_boost_title" />
 
      <SwitchPreference
+          android:key="cpu_underclock"
+          android:defaultValue="false"
+          android:title="@string/cpu_underclock_title" />
+
+     <SwitchPreference
           android:key="charging_limit"
           android:defaultValue="false"
           android:title="@string/charging_limit_title" />
