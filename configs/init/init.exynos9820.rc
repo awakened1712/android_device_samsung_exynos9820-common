@@ -66,7 +66,7 @@ on init
     chown system system /sys/devices/system/cpu/cpu4/cpufreq/schedutil/freqvar_st_boost
     chown system system /sys/devices/system/cpu/cpu6/cpufreq/schedutil/freqvar_st_boost 
 
-    write /sys/kernel/ems/eff_mode 1
+    write /sys/kernel/ems/eff_mode 0
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/freqvar_st_boost 5
     write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/freqvar_st_boost 20
     write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/freqvar_st_boost 5
